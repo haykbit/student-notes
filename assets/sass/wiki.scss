@@ -137,7 +137,7 @@ header {
 }
 
 //tab button
-.btn__tab {
+.btn__tab_wiki {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -149,10 +149,10 @@ header {
   padding: 0;
   font-size: inherit;
   font-family: inherit;
-  &.learn-more {
+  &.learn-more_wiki {
     width: 12rem;
     height: auto;
-    .circle {
+    .circle_wiki {
       @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: relative;
       display: block;
@@ -188,7 +188,7 @@ header {
         }
       }
     }
-    .button-text {
+    .button-text_wiki {
       @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: absolute;
       top: 0;
@@ -205,7 +205,7 @@ header {
     }
   }
   &:hover {
-    .circle {
+    .circle_wiki {
       width: 100%;
       .icon {
         &.arrow {
@@ -214,7 +214,7 @@ header {
         }
       }
     }
-    .button-text {
+    .button-text_wiki {
       color: $white;
     }
   }
@@ -228,8 +228,38 @@ header {
   }
 }
 
+.btn__tab_wiki.learn-more_wiki {
+  margin-top: 40px;
+}
+
+.high__text__1 {
+  font-size: 25px;
+  color: var(--colour1);
+}
+.high__text__2 {
+  font-size: 25px;
+  color: rgb(255, 110, 110);
+}
+.high__text__3 {
+  font-size: 25px;
+  color: rgb(255, 196, 0);
+}
+.high__text__4 {
+  font-size: 25px;
+  color: rgb(21, 255, 0);
+}
+.high__text__5 {
+  font-size: 25px;
+  color: rgb(90, 0, 207);
+}
+
+.high__text__6 {
+  font-size: 25px;
+  color: rgb(0, 207, 138);
+}
+
 //Tabs Styling
-.tab__content {
+.tab__content_wiki {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -238,20 +268,20 @@ header {
   align-content: start;
 }
 
-.tab {
+.tab_wiki {
   flex: 25%;
   background-color: #fff;
   margin: 20px 10px;
   padding: 30px;
   max-width: fit-content;
-  height: 320px;
+  height: fit-content;
   border-radius: 10px;
   overflow: hidden;
   transition: 0.3s linear;
   transform: 0.8s ease-in-out;
 }
 
-.tab:focus {
+.tab_wiki:focus {
   transform: rotate3d(20, 25, 25, -50deg);
 }
 
@@ -307,16 +337,16 @@ header {
 }
 
 @media screen and (max-width: 830px) {
-  .tab__content {
+  .tab__content_wiki {
     justify-content: space-around;
   }
-  .tab {
+  .tab_wiki {
     flex: 50%;
   }
 }
 
 @media screen and (max-width: 520px) {
-  .tab {
+  .tab_wiki {
     flex: 75%;
   }
 }

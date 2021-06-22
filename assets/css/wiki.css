@@ -125,7 +125,7 @@ header {
           box-shadow: 0px 0px 0px 2px white;
 }
 
-.btn__tab {
+.btn__tab_wiki {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -139,12 +139,12 @@ header {
   font-family: inherit;
 }
 
-.btn__tab.learn-more {
+.btn__tab_wiki.learn-more_wiki {
   width: 12rem;
   height: auto;
 }
 
-.btn__tab.learn-more .circle {
+.btn__tab_wiki.learn-more_wiki .circle_wiki {
   -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
@@ -156,7 +156,7 @@ header {
   border-radius: 1.625rem;
 }
 
-.btn__tab.learn-more .circle .icon {
+.btn__tab_wiki.learn-more_wiki .circle_wiki .icon {
   -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
@@ -166,7 +166,7 @@ header {
   background: #fff;
 }
 
-.btn__tab.learn-more .circle .icon.arrow {
+.btn__tab_wiki.learn-more_wiki .circle_wiki .icon.arrow {
   -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
@@ -175,7 +175,7 @@ header {
   background: none;
 }
 
-.btn__tab.learn-more .circle .icon.arrow::before {
+.btn__tab_wiki.learn-more_wiki .circle_wiki .icon.arrow::before {
   position: absolute;
   content: "";
   top: -0.25rem;
@@ -188,7 +188,7 @@ header {
           transform: rotate(45deg);
 }
 
-.btn__tab.learn-more .button-text {
+.btn__tab_wiki.learn-more_wiki .button-text_wiki {
   -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
@@ -205,23 +205,18 @@ header {
   text-transform: uppercase;
 }
 
-.btn__tab:hover .circle {
+.btn__tab_wiki:hover .circle_wiki {
   width: 100%;
 }
 
-.btn__tab:hover .circle .icon.arrow {
+.btn__tab_wiki:hover .circle_wiki .icon.arrow {
   background: #fff;
   -webkit-transform: translate(1rem, 0);
           transform: translate(1rem, 0);
 }
 
-.btn__tab:hover .button-text {
+.btn__tab_wiki:hover .button-text_wiki {
   color: #fff;
-}
-
-.learn-more.btn__tab {
-  float: right;
-  margin-top: 25px;
 }
 
 @supports (display: grid) {
@@ -235,37 +230,61 @@ header {
   }
 }
 
-.list__wrapper {
+.btn__tab_wiki.learn-more_wiki {
+  margin-top: 40px;
+}
+
+.high__text__1 {
+  font-size: 25px;
+  color: var(--colour1);
+}
+
+.high__text__2 {
+  font-size: 25px;
+  color: #ff6e6e;
+}
+
+.high__text__3 {
+  font-size: 25px;
+  color: #ffc400;
+}
+
+.high__text__4 {
+  font-size: 25px;
+  color: #15ff00;
+}
+
+.high__text__5 {
+  font-size: 25px;
+  color: #5a00cf;
+}
+
+.high__text__6 {
+  font-size: 25px;
+  color: #00cf8a;
+}
+
+.tab__content_wiki {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-line-pack: start;
+      align-content: start;
 }
 
-.prog__list li {
-  list-style: none;
-  text-decoration: none;
-  margin-bottom: 8px;
-}
-
-.prog__options li {
-  list-style: none;
-  text-decoration: none;
-  margin-top: 20px;
-}
-
-.tab__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.tab {
+.tab_wiki {
   -webkit-box-flex: 25%;
       -ms-flex: 25%;
           flex: 25%;
@@ -275,7 +294,9 @@ header {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  height: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 10px;
   overflow: hidden;
   -webkit-transition: 0.3s linear;
@@ -284,17 +305,9 @@ header {
           transform: 0.8s ease-in-out;
 }
 
-.tab p {
-  margin-bottom: 3rem;
-}
-
-.tab:focus {
+.tab_wiki:focus {
   -webkit-transform: rotate3d(20, 25, 25, -50deg);
           transform: rotate3d(20, 25, 25, -50deg);
-}
-
-.prog__list li {
-  color: black;
 }
 
 @media screen and (max-width: 850px) {
@@ -348,11 +361,11 @@ header {
 }
 
 @media screen and (max-width: 830px) {
-  .tab__content {
+  .tab__content_wiki {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  .tab {
+  .tab_wiki {
     -webkit-box-flex: 50%;
         -ms-flex: 50%;
             flex: 50%;
@@ -360,10 +373,10 @@ header {
 }
 
 @media screen and (max-width: 520px) {
-  .tab {
+  .tab_wiki {
     -webkit-box-flex: 75%;
         -ms-flex: 75%;
             flex: 75%;
   }
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=wiki.css.map */
