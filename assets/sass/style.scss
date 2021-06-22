@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserra", sans-serif;
+}
+
+:root {
+  --mainColor: #ff9800;
+  --bgcolor: #111111;
+  --navbgcolor: #000000;
+  --button: #6637ff;
+  --colour1: #7b81ec;
+  --colour2: #3bd1d3;
+}
+
+body {
+  background-color: var(--bgcolor);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+//Logo styling
+.logo {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  cursor: pointer;
+}
+
+.logoLink {
+  margin-right: auto;
+  font-size: 25px;
+}
+
+.text {
+  color: #fafafa;
+}
+
+.dud {
+  color: #757575;
+}
+
+//Menu li items
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+//Header display flex
+header {
+  background-color: var(--navbgcolor);
+}
+
+.nav__bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 10px 10px 25px;
+}
+
+//Hamburger
+.hamburger {
+  background-color: transparent;
+  display: none;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+//Nav links styling
+.nav__links {
+  list-style-type: none;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links .link a {
+  background: linear-gradient(
+    to bottom,
+    var(--mainColor) 0%,
+    var(--mainColor) 100%
+  );
+  background-position: 0% 100%;
+  background-repeat: repeat-x;
+  background-size: 3px 3px;
+}
+
+.nav__links .link a:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0% 100%;
+  background-size: auto 6px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+}
+
+//Help Button
+.button {
+  background-color: var(--button);
+  border: none;
+  padding: 9px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 0px 2px rgb(255, 255, 255);
+}
+
+//tab button
+.btn__tab {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      border-radius: 1.625rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: "";
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $black;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+          background: $white;
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: $white;
+    }
+  }
+}
+
+@supports (display: grid) {
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+//Tabs Styling
+.tab__content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: start;
+}
+
+.tab {
+  flex: 25%;
+  background-color: #fff;
+  margin: 20px 10px;
+  padding: 30px;
+  max-width: fit-content;
+  height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s linear;
+  transform: 0.8s ease-in-out;
+}
+
+.tab:focus {
+  transform: rotate3d(20, 25, 25, -50deg);
+}
+
+@media screen and (max-width: 850px) {
+  .logoLink {
+    font-size: 16px;
+  }
+
+  .nav__links a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .logoLink {
+    font-size: 16px;
+  }
+
+  .nav__bar {
+    padding: 20px;
+  }
+
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 40px;
+    padding: 20px 2px 20px 20px;
+  }
+
+  .nav__links li {
+    padding: 0px 2px;
+    margin-top: 10px;
+  }
+
+  .nav__links a {
+    font-size: 16px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav__links.show {
+    display: flex;
+    margin-top: -20px;
+  }
+
+  .button {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .tab__content {
+    justify-content: space-around;
+  }
+  .tab {
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .tab {
+    flex: 75%;
+  }
+}
